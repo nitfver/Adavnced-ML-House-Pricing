@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>HOUSE PRECICTION API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict House Price</h1>
+
+
+  <h2>Enter the path where the house predict csv file(for example test.csv) is kept and then click on Predict Button to get the price of House
+  <br> 
+  </h2>
+
+  <form action="{{ url_for('predict')}}"method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=predict>
+  </form>
+  
+     <!-- Main Input For Receiving Query to our ML -->
+    <!--form action="{{ url_for('predict')}}"method="post">
+    	
+
+
+      <textarea name="Comma Seperated House Features" rows="10" cols="100"></textarea>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form-->
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+
+
+
+</body>
+</html>
